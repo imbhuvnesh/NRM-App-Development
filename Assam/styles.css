@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Roboto:wght@300;500&display=swap");
+
+html {
+	font-family: "Open Sans", sans-serif;
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	background: #78909c;
+	padding: 10px;
+}
+
+.container {
+	padding: 20px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 0px 10px 0px;
+}
+
+.heading {
+	font-size: 52px;
+	color: white;
+}
+
+.content {
+	font-size: 22px;
+	line-height: 2.2rem;
+}
+
+#image-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 0;
+}
+
+#image-header img {
+	border-radius: 10px;
+	transition: 0.2s;
+	-webkit-box-shadow: 1px -1px 32px -3px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 1px -1px 32px -3px rgba(0, 0, 0, 0.75);
+	box-shadow: 1px -1px 32px -3px rgba(0, 0, 0, 0.75);
+	border: solid 1px gray;
+}
+#image-header img:hover {
+	transform: scale(1.1);
+}
+
+.link-container {
+	margin: 10px 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.link {
+	border-radius: 10px;
+	border: none;
+	padding: 12px;
+	border: solid 1px gray;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	transition: 0.2s;
+	margin: 2px 8px;
+	-webkit-box-shadow: 1px 3px 37px -12px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 1px 3px 37px -12px rgba(0, 0, 0, 0.75);
+	box-shadow: 1px 3px 37px -12px rgba(0, 0, 0, 0.75);
+}
+
+.link:hover {
+	transform: scale(1.1);
+}
