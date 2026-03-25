@@ -21,7 +21,7 @@
 			<input id="stateSearch" type="search" placeholder="Search by state name..." />
 			<button id="clearSearch" class="btn2" type="button">Clear</button>
 			<p id="resultCount" aria-live="polite"></p>
-			<p class="state-note">Available states are directly clickable. Other states are marked as coming soon.</p>
+			<p class="state-note">All listed states are clickable. Assam and Rajasthan open dedicated pages; others open a standard state resource page.</p>
 		</section>
 
 		<section id="stateGrid" class="state-grid">
@@ -83,13 +83,7 @@
 				const stateName = button.dataset.state;
 
 				if (!button.dataset.url) {
-					button.classList.add("coming-soon");
-					button.dataset.status = "Coming soon";
-					button.title = "Page coming soon";
-					button.setAttribute("aria-label", `${stateName} - Coming soon`);
-					button.disabled = true;
-					button.setAttribute("aria-disabled", "true");
-					return;
+					button.dataset.url = `state.html?state=${encodeURIComponent(stateName)}`;
 				}
 
 				button.classList.add("available");
