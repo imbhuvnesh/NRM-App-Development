@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>State Resources | NRM Technologies</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body class="state-page">
+<header class="state-header">
+<h1 id="stateTitle">State Resources</h1>
+<p id="stateDescription">State-wise NRM files and supporting documents.</p>
+<a class="back-link" href="index.html">← Back to States</a>
+</header>
+
+<main class="state-content">
+<section class="info-card">
+<h2>Available files</h2>
+<p id="stateInfo">
+Open the available state documents below.
+</p>
+</section>
+
+<section class="link-card">
+<h3>State Documents</h3>
+<ul id="resourceList"></ul>
+</section>
+</main>
+
+<script>
+(function () {
+const params = new URLSearchParams(window.location.search);
+const selectedState = params.get("state") || "";
+
+const stateMap = {
+"Andaman & Nicobar Islands": { folder: "Andaman & Nicobar Islands", profile: "1 Andaman & Nicobar Islands.docx" },
+"Andhra Pradesh": { folder: "Andhra Pradesh", profile: "1 Andhra Pradesh.docx" },
+"Arunachal Pradesh": { folder: "Arunachal Pradesh", profile: "1 Arunachal Pradesh.docx" },
+Assam: { folder: "Assam", profile: "1 Assam.docx" },
+Bihar: { folder: "Bihar", profile: "1 Bihar.docx" },
+Chhattisgarh: { folder: "Chhattisgarh", profile: "1 Chhattisgarh.docx" },
+Delhi: { folder: "Delhi", profile: "1 Delhi.docx" },
+Goa: { folder: "Goa", profile: "1 Goa.docx" },
+Gujarat: { folder: "Gujrat", profile: "1 Gujarat.docx" },
+Haryana: { folder: "Haryana", profile: "1 Haryana.docx" },
+"Himachal Pradesh": { folder: "Himachal Pradesh", profile: "1 Himacha Pradesh.docx" },
+"Jammu & Kashmir": { folder: "Jammu & Kashmir", profile: "1 Jammu & Kashmir.docx" },
+Jharkhand: { folder: "Jharkhand", profile: "1 Jharkand.docx" },
+Karnataka: { folder: "Karnataka", profile: "1 Karnataka.docx" },
+Kerala: { folder: "Kerala", profile: "1 Kerala.docx" },
+"Madhya Pradesh": { folder: "Madhya Pradesh", profile: "1 Madhya Pradesh.docx" },
+Maharashtra: { folder: "Maharashtra", profile: "1 Maharashtra.docx" },
+Manipur: { folder: "Manipur", profile: "1 Manipur.docx" },
+Meghalaya: { folder: "Meghalaya", profile: "1 Meghalaya.docx" },
+Mizoram: { folder: "Mizoram", profile: "1 Mizoram.docx" },
+Nagaland: { folder: "Nagaland", profile: "1 Nagaland.docx" },
+"Odisha (Orissa)": { folder: "Odisha", profile: "1 Odisha.docx" },
+Punjab: { folder: "Punjab", profile: "1 Punjab.docx" },
+Rajasthan: { folder: "Rajasthan", profile: "1 Rajasthan.docx" },
+Sikkim: { folder: "Sikkim", profile: "1 Sikkim.docx" },
+"Tamil Nadu": { folder: "Tamil Nadu", profile: "1 Tamil Nadu.docx" },
+Tripura: { folder: "Tirpura", profile: "1 Tripura.docx" },
+"Uttar Pradesh": { folder: "Uttar Pradesh", profile: "1 Uttar Pradesh.docx" },
+Uttarakhand: { folder: "Uttrakhand", profile: "1 Uttarakhand.docx" },
+"West Bengal": { folder: "West Bengal", profile: "1 West Bengal.docx" }
+};
+
+const resourceTemplates = [
+{ label: "State Profile", file: (state) => state.profile },
+{ label: "Major NRM Issues", file: () => "2 Major NRM Issue.docx" },
+{ label: "Data Source", file: () => "3 Data Source.docx" },
+{ label: "Major Technological Interventions & Organisational Backstopping", file: () => "4 Major Technological Interventions & Organisational Backstopping.docx" },
+{ label: "Relevant Developmental Schemes", file: () => "5 Relevant Developmental Schemes.docx" }
+];
+
+const stateTitle = document.getElementById("stateTitle");
+const stateDescription = document.getElementById("stateDescription");
+const stateInfo = document.getElementById("stateInfo");
+const resourceList = document.getElementById("resourceList");
+
+const stateConfig = stateMap[selectedState];
+
+if (!stateConfig) {
+stateTitle.textContent = "State not found";
+stateDescription.textContent = "The selected state does not have mapped resources yet.";
+stateInfo.textContent = "Please return to the state list and try another state.";
+resourceList.innerHTML = "";
+return;
+}
+
+stateTitle.textContent = selectedState;
+stateDescription.textContent = `${selectedState} resources are available in document format.`;
+stateInfo.textContent = "These links open source documents available in the repository for this state.";
+
+resourceTemplates.forEach((item) => {
+const fileName = item.file(stateConfig);
+const li = document.createElement("li");
+const a = document.createElement("a");
+a.href = `../../${stateConfig.folder}/${fileName}`;
+a.textContent = item.label;
+a.target = "_blank";
+a.rel = "noopener noreferrer";
+li.appendChild(a);
+resourceList.appendChild(li);
+});
+})();
+</script>
+</body>
+</html>

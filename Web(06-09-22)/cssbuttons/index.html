@@ -21,6 +21,7 @@
 			<input id="stateSearch" type="search" placeholder="Search by state name..." />
 			<button id="clearSearch" class="btn2" type="button">Clear</button>
 			<p id="resultCount" aria-live="polite"></p>
+			<p class="state-note">All listed states are clickable. Assam and Rajasthan open dedicated pages; others open a standard state resource page.</p>
 		</section>
 
 		<section id="stateGrid" class="state-grid">
@@ -79,17 +80,18 @@
 			}
 
 			stateButtons.forEach((button) => {
+				const stateName = button.dataset.state;
+
 				if (!button.dataset.url) {
-					button.classList.add("coming-soon");
-					button.title = "Page coming soon";
+					button.dataset.url = `state.html?state=${encodeURIComponent(stateName)}`;
 				}
 
+				button.classList.add("available");
+				button.dataset.status = "Available";
+				button.setAttribute("aria-label", `${stateName} - Available`);
+
 				button.addEventListener("click", () => {
-					if (button.dataset.url) {
-						window.location.href = button.dataset.url;
-						return;
-					}
-					window.alert("This page is coming soon.");
+					window.location.href = button.dataset.url;
 				});
 			});
 
