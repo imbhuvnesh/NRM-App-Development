@@ -21,6 +21,7 @@
 			<input id="stateSearch" type="search" placeholder="Search by state name..." />
 			<button id="clearSearch" class="btn2" type="button">Clear</button>
 			<p id="resultCount" aria-live="polite"></p>
+			<p class="state-note">Available states are directly clickable. Other states are marked as coming soon.</p>
 		</section>
 
 		<section id="stateGrid" class="state-grid">
@@ -81,15 +82,18 @@
 			stateButtons.forEach((button) => {
 				if (!button.dataset.url) {
 					button.classList.add("coming-soon");
+					button.dataset.status = "Coming soon";
 					button.title = "Page coming soon";
+					button.disabled = true;
+					button.setAttribute("aria-disabled", "true");
+					return;
 				}
 
+				button.classList.add("available");
+				button.dataset.status = "Available";
+
 				button.addEventListener("click", () => {
-					if (button.dataset.url) {
-						window.location.href = button.dataset.url;
-						return;
-					}
-					window.alert("This page is coming soon.");
+					window.location.href = button.dataset.url;
 				});
 			});
 
