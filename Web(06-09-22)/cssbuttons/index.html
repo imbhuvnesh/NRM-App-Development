@@ -80,10 +80,13 @@
 			}
 
 			stateButtons.forEach((button) => {
+				const stateName = button.dataset.state;
+
 				if (!button.dataset.url) {
 					button.classList.add("coming-soon");
 					button.dataset.status = "Coming soon";
 					button.title = "Page coming soon";
+					button.setAttribute("aria-label", `${stateName} - Coming soon`);
 					button.disabled = true;
 					button.setAttribute("aria-disabled", "true");
 					return;
@@ -91,6 +94,7 @@
 
 				button.classList.add("available");
 				button.dataset.status = "Available";
+				button.setAttribute("aria-label", `${stateName} - Available`);
 
 				button.addEventListener("click", () => {
 					window.location.href = button.dataset.url;
