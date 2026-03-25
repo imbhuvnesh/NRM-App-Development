@@ -1,52 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>	NRM Technologies fo AER of India </title>
-	<link rel="stylesheet" type="text/css" href="style.css"
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>NRM Technologies for AER of India</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<div id="body1">
-		<img src="ICAR-logo.gif" height="170" width="170" align="left">
-		<div class="top"><h1>Managing NRM Issues in districts of different AER regions of India</h1>  </div></div>
+	<header id="body1">
+		<img src="ICAR-logo.gif" alt="ICAR logo" width="120" height="120" />
+		<div class="top">
+			<h1>Managing NRM Issues in districts of different AER regions of India</h1>
+			<p class="subtitle">Explore state-wise resources, interventions, and data sources.</p>
+		</div>
+	</header>
 
-<h3 align="Center">
+	<main class="content-wrap">
+		<section class="toolbar">
+			<label for="stateSearch" class="sr-only">Search state</label>
+			<input id="stateSearch" type="search" placeholder="Search by state name..." />
+			<button id="clearSearch" class="btn2" type="button">Clear</button>
+			<p id="resultCount" aria-live="polite"></p>
+		</section>
 
-<br><br><br><br>
+		<section id="stateGrid" class="state-grid">
+			<button class="btn state-btn" data-state="Andaman & Nicobar Islands" data-url="">Andaman & Nicobar Islands</button>
+			<button class="btn state-btn" data-state="Andhra Pradesh" data-url="">Andhra Pradesh</button>
+			<button class="btn state-btn" data-state="Arunachal Pradesh" data-url="">Arunachal Pradesh</button>
+			<button class="btn state-btn" data-state="Assam" data-url="../../Assam/index.html">Assam</button>
+			<button class="btn state-btn" data-state="Bihar" data-url="">Bihar</button>
+			<button class="btn state-btn" data-state="Chhattisgarh" data-url="">Chhattisgarh</button>
+			<button class="btn state-btn" data-state="Delhi" data-url="">Delhi</button>
+			<button class="btn state-btn" data-state="Goa" data-url="">Goa</button>
+			<button class="btn state-btn" data-state="Gujarat" data-url="">Gujarat</button>
+			<button class="btn state-btn" data-state="Haryana" data-url="">Haryana</button>
+			<button class="btn state-btn" data-state="Himachal Pradesh" data-url="">Himachal Pradesh</button>
+			<button class="btn state-btn" data-state="Jammu & Kashmir" data-url="">Jammu & Kashmir</button>
+			<button class="btn state-btn" data-state="Jharkhand" data-url="">Jharkhand</button>
+			<button class="btn state-btn" data-state="Karnataka" data-url="">Karnataka</button>
+			<button class="btn state-btn" data-state="Kerala" data-url="">Kerala</button>
+			<button class="btn state-btn" data-state="Madhya Pradesh" data-url="">Madhya Pradesh</button>
+			<button class="btn state-btn" data-state="Maharashtra" data-url="">Maharashtra</button>
+			<button class="btn state-btn" data-state="Manipur" data-url="">Manipur</button>
+			<button class="btn state-btn" data-state="Meghalaya" data-url="">Meghalaya</button>
+			<button class="btn state-btn" data-state="Mizoram" data-url="">Mizoram</button>
+			<button class="btn state-btn" data-state="Nagaland" data-url="">Nagaland</button>
+			<button class="btn state-btn" data-state="Odisha (Orissa)" data-url="">Odisha (Orissa)</button>
+			<button class="btn state-btn" data-state="Punjab" data-url="">Punjab</button>
+			<button class="btn state-btn" data-state="Rajasthan" data-url="Rajasthan.html.html">Rajasthan</button>
+			<button class="btn state-btn" data-state="Sikkim" data-url="">Sikkim</button>
+			<button class="btn state-btn" data-state="Tamil Nadu" data-url="">Tamil Nadu</button>
+			<button class="btn state-btn" data-state="Tripura" data-url="">Tripura</button>
+			<button class="btn state-btn" data-state="Uttar Pradesh" data-url="">Uttar Pradesh</button>
+			<button class="btn state-btn" data-state="Uttarakhand" data-url="">Uttarakhand</button>
+			<button class="btn state-btn" data-state="West Bengal" data-url="">West Bengal</button>
+		</section>
+	</main>
 
-<button class="btn">Andaman & Nicobar </button> 
-<button class="btn 2s">Andhra Pradesh</button> 
-<button class="btn 3s">Arunachal Pradesh</button> 
-<button class="btn 4s">Assam</button><br><br> 
-<button class="btn 5s">Bihar</button> 
-<button class="btn 6s">Chhattisgarh</button>
-<button class="btn 30s">Delhi</button> 
-<button class="btn 7s">Goa</button><br><br> 
-<button class="btn 8s">Gujarat</button> 
-<button class="btn 9s">Haryana</button> 
-<button class="btn 10s">Himachal Pradesh</button>
-<button class="btn 11s">Jammu & Kashmir</button><br><br> 
-<button class="btn 12s">Jharkhand</button> 
-<button class="btn 13s">Karnataka</button> 
-<button class="btn 14s">Kerala</button> 
-<button class="btn 15s">Madhya Pradesh</button> <br><br>
-<button class="btn 16s">Maharashtra</button> 
-<button class="btn 17s">Manipur</button> 
-<button class="btn 18s">Meghalaya</button> 
-<button class="btn 19s">Mizoram</button> <br><br>
-<button class="btn 20s">Nagaland</button> 
-<button class="btn 21s">Orissa</button> 
-<button class="btn 22s">Punjab</button> 
-<button class="btn 23s"><a href="Rajasthan.html">Rajasthan</a></button> <br><br>
-<button class="btn 24s">Sikkim</button>
-<button class="btn 25s">Tamil Nadu</button> 
-<button class="btn 26s">Tripura</button> 
-<button class="btn 27s">Uttar Pradesh</button><br><br> 
-<button class="btn 28s">Uttarakhand</button>
-<button class="btn 29s">West Bengal</button> 
-                   
+	<script>
+		(function () {
+			const searchInput = document.getElementById("stateSearch");
+			const clearButton = document.getElementById("clearSearch");
+			const resultCount = document.getElementById("resultCount");
+			const stateButtons = Array.from(document.querySelectorAll(".state-btn"));
 
+			function updateResults() {
+				const query = searchInput.value.trim().toLowerCase();
+				let visible = 0;
 
-</h3>
+				stateButtons.forEach((button) => {
+					const stateName = button.dataset.state.toLowerCase();
+					const matched = stateName.includes(query);
+					button.style.display = matched ? "" : "none";
+					if (matched) visible += 1;
+				});
+
+				resultCount.textContent = `${visible} state${visible === 1 ? "" : "s"} shown`;
+			}
+
+			stateButtons.forEach((button) => {
+				if (!button.dataset.url) {
+					button.classList.add("coming-soon");
+					button.title = "Page coming soon";
+				}
+
+				button.addEventListener("click", () => {
+					if (button.dataset.url) {
+						window.location.href = button.dataset.url;
+						return;
+					}
+					window.alert("This page is coming soon.");
+				});
+			});
+
+			searchInput.addEventListener("input", updateResults);
+			clearButton.addEventListener("click", () => {
+				searchInput.value = "";
+				updateResults();
+				searchInput.focus();
+			});
+
+			updateResults();
+		})();
+	</script>
 </body>
 </html>
